@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemolink - Minhas Estatísticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.5s;
+            transform-origin: 50% 50%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+            }
+        }
+        
+        .donation-timeline {
+            position: relative;
+        }
+        
+        .donation-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 9px;
+            height: 100%;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dc2626;
+            border: 4px solid #fecaca;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-red-600 text-white p-2 rounded-lg mr-3">
+                    <i class="fas fa-heartbeat text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-red-600">Hemolink</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="profile.html" class="text-gray-600 hover:text-red-600">
+                    <i class="fas fa-arrow-left mr-1"></i> Voltar
+                </a>
+                <div class="relative">
+                    <i class="fas fa-bell text-gray-600 text-xl cursor-pointer"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
+                </div>
+                <a href="profile.html">
+                    <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-user text-gray-600"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header with donor info -->
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="h-16 w-16 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-red-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">João Silva</h2>
+                        <div class="flex items-center mt-1">
+                            <div class="bg-red-600 text-white px-2 py-1 rounded-md text-xs font-bold mr-2">O+</div>
+                            <span class="text-gray-600 text-sm">Doador desde: 15/05/2018</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-red-50 border border-red-100 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <div class="bg-red-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-heart text-red-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Próxima doação possível</h3>
+                            <p class="text-red-600 font-bold">15/09/2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main statistics cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Donations card -->
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-gray-500 font-medium">Total de Doações</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">12</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-lg">
+                            <i class="fas fa-syringe text-red-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-green-600 text-sm">
+                        <i class="fas fa-arrow-up mr-1"></i>
+                        <span>2 doações a mais que no ano passado</span>
+                    </div>
+                </div>
+                
+                <!-- Lives impacted card -->
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-gray-500 font-medium">Vidas Impactadas</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">36</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fas fa-users text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Cada doação pode salvar até 3 vidas</p>
+                </div>
+                
+                <!-- Heartbeats donated card -->
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-gray-500 font-medium">Batimentos Doados</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">504,000</p>
+                        </div>
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <i class="fas fa-heartbeat text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">~42,000 batimentos por doação</p>
+                </div>
+                
+                <!-- Next donation card -->
+                <div class="stat-card bg-white rounded-xl shadow-md p-6 transition duration-300 pulse">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-gray-500 font-medium">Dias para próxima doação</h3>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">23</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fas fa-calendar-check text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-red-600 h-2.5 rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress and achievements section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Donation frequency progress -->
+                <div class="bg-white rounded-xl shadow-md p-6 lg:col-span-1">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Frequência de Doação</h3>
+                    <div class="flex flex-col items-center">
+                        <svg class="progress-ring w-40 h-40 mb-4" viewBox="0 0 100 100">
+                            <circle class="progress-ring__circle stroke-gray-200" stroke-width="8" fill="transparent" r="40" cx="50" cy="50"/>
+                            <circle class="progress-ring__circle stroke-red-600" stroke-width="8" fill="transparent" r="40" cx="50" cy="50" stroke-dasharray="251.2" stroke-dashoffset="75.36"/>
+                        </svg>
+                        <p class="text-2xl font-bold text-gray-800">70%</p>
+                        <p class="text-gray-600 text-center mt-2">Você doa com mais frequência que 70% dos doadores do seu tipo sanguíneo</p>
+                    </div>
+                </div>
+                
+                <!-- Milestones and badges -->
+                <div class="bg-white rounded-xl shadow-md p-6 lg:col-span-2">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Conquistas e Medalhas</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+                            <div class="bg-yellow-100 p-3 rounded-full mb-2">
+                                <i class="fas fa-trophy text-yellow-600 text-xl"></i>
+                            </div>
+                            <p class="font-medium text-center">Doador Bronze</p>
+                            <p class="text-xs text-gray-500 text-center">5+ doações</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                            <div class="bg-gray-200 p-3 rounded-full mb-2">
+                                <i class="fas fa-trophy text-gray-600 text-xl"></i>
+                            </div>
+                            <p class="font-medium text-center">Doador Prata</p>
+                            <p class="text-xs text-gray-500 text-center">10 doações</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+                            <div class="bg-yellow-100 p-3 rounded-full mb-2">
+                                <i class="fas fa-star text-yellow-600 text-xl"></i>
+                            </div>
+                            <p class="font-medium text-center">Regularidade</p>
+                            <p class="text-xs text-gray-500 text-center">3 doações/ano</p>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-red-50 rounded-lg">
+                            <div class="bg-red-100 p-3 rounded-full mb-2">
+                                <i class="fas fa-heart text-red-600 text-xl"></i>
+                            </div>
+                            <p class="font-medium text-center">Herói</p>
+                            <p class="text-xs text-gray-500 text-center">Salvou 30+ vidas</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-medium text-gray-700 mb-2">Próxima conquista:</h4>
+                        <div class="flex items-center">
+                            <div class="bg-gray-200 p-2 rounded-full mr-3">
+                                <i class="fas fa-trophy text-gray-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Doador Ouro</span>
+                                    <span>8/15 doações</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 53%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Donation history -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-bold text-gray-800">Histórico de Doações</h3>
+                    <button class="text-red-600 hover:text-red-800 font-medium flex items-center">
+                        <i class="fas fa-download mr-2"></i> Exportar
+                    </button>
+                </div>
+                
+                <div class="donation-timeline pl-8">
+                    <!-- Recent donation -->
+                    <div class="timeline-item relative pb-6">
+                        <div class="flex flex-col md:flex-row justify-between bg-red-50 rounded-lg p-4">
+                            <div>
+                                <p class="font-bold text-gray-800">Doação Completa</p>
+                                <p class="text-gray-600 text-sm">Hemocentro São Paulo</p>
+                            </div>
+                            <div class="mt-2 md:mt-0">
+                                <p class="text-gray-800"><i class="fas fa-calendar-alt mr-2 text-red-600"></i> 15/06/2023</p>
+                                <p class="text-gray-600 text-sm"><i class="fas fa-clock mr-2 text-red-600"></i> 450ml doados</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Past donations -->
+                    <div class="timeline-item relative pb-6">
+                        <div class="flex flex-col md:flex-row justify-between bg-white border border-gray-100 rounded-lg p-4">
+                            <div>
+                                <p class="font-bold text-gray-800">Doação Completa</p>
+                                <p class="text-gray-600 text-sm">Hemocentro ABC</p>
+                            </div>
+                           
+</html>
