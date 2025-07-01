@@ -1,0 +1,6 @@
+# IDE files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~

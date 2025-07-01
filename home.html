@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoLink - Início</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animação de glow vermelho para comentários */
+        .comentario-hover {
+            transition: box-shadow 0.4s;
+        }
+
+        .comentario-hover:hover {
+            /* Glow vermelho com fade: mais intenso na borda, mais suave ao afastar */
+            box-shadow:
+                0 0 0 4px rgba(220, 38, 38, 0.25),
+                0 0 16px 4px rgba(220, 38, 38, 0.18),
+                0 0 32px 8px rgba(220, 38, 38, 0.10);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <!--#include file="components/header.html" -->
+    <!-- Header Component -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-red-600 text-white p-2 rounded-lg mr-3">
+                    <i class="fas fa-heartbeat text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-red-600">Hemolink</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#sobre" class="text-gray-700 hover:text-red-600 font-medium transition">Sobre</a>
+                <a href="#solicite-doacao" class="text-gray-700 hover:text-red-600 font-medium transition">Solicite
+                    Doação</a>
+                <a href="#doe-sangue" class="text-gray-700 hover:text-red-600 font-medium transition">Doe Sangue</a>
+                <a href="#comentarios" class="text-gray-700 hover:text-red-600 font-medium transition">Comentários</a>
+                <a href="#contato" class="text-gray-700 hover:text-red-600 font-medium transition">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Back button (optional) -->
+                <a href="../donor/doadores-disponiveis.html" class="text-gray-600 hover:text-red-600 back-link"
+                    style="display: none;">
+                    <i class="fas fa-arrow-left mr-1"></i> Voltar
+                </a>
+                <!-- New donor button (home page only) -->
+                <button
+                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300 new-donor-btn"
+                    style="display: none;" onclick="window.location.href='pages/donor/editar-cadastro.html'">
+                    <i class="fas fa-plus mr-2"></i>Novo Doador
+                </button>
+                <!-- Login Button -->
+                <a href="pages/auth/login.html"
+                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition duration-300">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h2 class="text-3xl font-bold text-red-600 mb-4">Sobre o HemoLink</h2>
+            <p class="text-gray-700 text-lg">O HemoLink é uma plataforma dedicada a conectar doadores de sangue a quem
+                mais precisa. Nosso objetivo é facilitar o processo de doação e tornar o ato de salvar vidas mais
+                acessível, rápido e seguro para todos.</p>
+        </div>
+    </section>
+
+    <!-- Seção Solicite Doação -->
+    <section id="solicite-doacao" class="py-16">
+        <div class="container mx-auto px-4 text-center max-w-xl">
+            <h2 class="text-2xl font-bold text-red-600 mb-4">Solicite uma Doação</h2>
+            <p class="text-gray-700 mb-6">Precisa de uma doação de sangue? Faça seu pedido aqui e encontre doadores
+                dispostos a ajudar você ou alguém próximo.</p>
+            <a href="pages/donor/pedir-doacao.html"
+                class="px-6 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">Solicite
+                Doação</a>
+        </div>
+    </section>
+
+    <!-- Seção Doe Sangue (Cards) -->
+    <section id="doe-sangue" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-red-600 text-center mb-8">Doe Sangue</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-stretch">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition hover:shadow-xl hover:-translate-y-1">
+                    <i class="fas fa-hand-holding-heart text-red-600 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Seja um doador!</h3>
+                    <p class="text-gray-700 mb-4">Se você está saudável, doe sangue e ajude a salvar vidas.</p>
+                    <a href="pages/donor/doadores-disponiveis.html"
+                        class="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition">Visualizar
+                        doadores</a>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition hover:shadow-xl hover:-translate-y-1">
+                    <i class="fas fa-info-circle text-red-600 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Como doar?</h3>
+                    <p class="text-gray-700">Para doar sangue, é necessário ter entre 16 e 69 anos, pesar mais de 50kg,
+                        estar em boas condições de saúde e apresentar documento oficial com foto.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition hover:shadow-xl hover:-translate-y-1">
+                    <i class="fas fa-ban text-red-600 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Impedimentos</h3>
+                    <p class="text-gray-700">Não podem doar: menores de 16 anos, pessoas gripadas, gestantes, quem fez
+                        tatuagem há menos de 12 meses, entre outros impedimentos temporários ou definitivos.</p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition hover:shadow-xl hover:-translate-y-1">
+                    <i class="fas fa-globe-americas text-red-600 text-4xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Impacto Global</h3>
+                    <p class="text-gray-700">A cada doação, até 4 vidas podem ser salvas. Milhões de pessoas no mundo
+                        dependem desse gesto de solidariedade todos os anos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Comentários -->
+    <section id="comentarios" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-red-600 text-center mb-8">O que dizem sobre o HemoLink</h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <div class="bg-white rounded-xl shadow-md p-6 flex-1 comentario-hover">
+                    <p class="text-gray-700 mb-4">"O HemoLink facilitou muito o processo de encontrar doadores para
+                        minha família. Recomendo a todos!"</p>
+                    <span class="font-bold text-red-600">Maria Fictícia</span>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex-1 comentario-hover">
+                    <p class="text-gray-700 mb-4">"Plataforma intuitiva, rápida e segura. Doe sangue, salve vidas!"</p>
+                    <span class="font-bold text-red-600">João Imaginário</span>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 flex-1 comentario-hover">
+                    <p class="text-gray-700 mb-4">"Graças ao HemoLink, consegui solicitar doação para um amigo em poucos
+                        minutos."</p>
+                    <span class="font-bold text-red-600">Ana Inventada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold text-red-600 text-center mb-8">Contato</h2>
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="flex-1 space-y-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt text-red-600 mr-3"></i>
+                        <span class="text-gray-700">(11) 99999-9999</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-red-600 mr-3"></i>
+                        <span class="text-gray-700">contato@hemolink.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-red-600 mr-3"></i>
+                        <span class="text-gray-700">Av. Fictícia, 1234 - São Paulo, SP</span>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <!-- Mapa fictício -->
+                    <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
+                        <span>Mapa ilustrativo dos pontos de coleta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!--#include file="components/footer.html" -->
+    <!-- Footer Component -->
+    <footer class="bg-white border-t border-gray-200 py-6 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="bg-red-600 text-white p-2 rounded-lg mr-3">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-red-600">Hemolink</h2>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-100 text-center text-gray-500 text-sm">
+                <p>© 2023 Hemolink. Todos os direitos reservados.</p>
+                <p class="mt-2">Sistema de gerenciamento de doadores de sangue</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => { window.hemolinkApp = new HemolinkApp(); });</script>
+</body>
+
+</html>

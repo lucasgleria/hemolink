@@ -13,7 +13,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-        
+
         .blood-type-option {
             display: flex;
             align-items: center;
@@ -25,24 +25,24 @@
             font-weight: bold;
             border: 2px solid transparent;
         }
-        
+
         .blood-type-option.selected {
             border-color: #dc2626;
             transform: scale(1.05);
             box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
         }
-        
+
         @media (max-width: 640px) {
             .blood-type-selector {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         /* Mask for inputs */
         input[data-mask="date"] {
             position: relative;
         }
-        
+
         input[data-mask="date"]:valid:after {
             position: absolute;
             content: "✓";
@@ -62,14 +62,14 @@
                 <h1 class="text-2xl font-bold text-red-600">Hemolink</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-red-600">
+                <a href="../donor/doadores-disponiveis.html" class="text-gray-600 hover:text-red-600">
                     <i class="fas fa-arrow-left mr-1"></i> Voltar
                 </a>
                 <div class="relative">
                     <i class="fas fa-bell text-gray-600 text-xl cursor-pointer"></i>
                     <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
                 </div>
-                <a href="profile.html">
+                <a href="../auth/login.html">
                     <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
                         <i class="fas fa-user text-gray-600"></i>
                     </div>
@@ -87,40 +87,50 @@
                     </div>
                     <h2 class="text-2xl font-bold text-gray-800">Cadastro de Doador</h2>
                 </div>
-                
+
                 <p class="text-gray-600 mb-8">Preencha seus dados para criar sua conta ou atualizar seu cadastro.</p>
-                
+
                 <form id="donorForm">
                     <!-- Nome e Sobrenome -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label for="firstName" class="block text-gray-700 font-medium mb-2">Nome</label>
-                            <input type="text" id="firstName" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Seu nome" required>
+                            <input type="text" id="firstName" name="firstName"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Seu nome" required>
                         </div>
                         <div>
                             <label for="lastName" class="block text-gray-700 font-medium mb-2">Sobrenome</label>
-                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Seu sobrenome" required>
+                            <input type="text" id="lastName" name="lastName"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Seu sobrenome" required>
                         </div>
                     </div>
-                    
+
                     <!-- Email -->
                     <div class="mb-6">
                         <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="seu.email@exemplo.com" required>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="seu.email@exemplo.com" required>
                     </div>
-                    
+
                     <!-- CPF -->
                     <div class="mb-6">
                         <label for="cpf" class="block text-gray-700 font-medium mb-2">CPF</label>
-                        <input type="text" id="cpf" name="cpf" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="000.000.000-00" data-mask="000.000.000-00" required>
+                        <input type="text" id="cpf" name="cpf"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="000.000.000-00" data-mask="000.000.000-00" required>
                     </div>
-                    
+
                     <!-- Data de Nascimento -->
                     <div class="mb-6">
                         <label for="birthDate" class="block text-gray-700 font-medium mb-2">Data de Nascimento</label>
-                        <input type="text" id="birthDate" name="birthDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="dd/mm/aaaa" data-mask="00/00/0000" required>
+                        <input type="text" id="birthDate" name="birthDate"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="dd/mm/aaaa" data-mask="00/00/0000" required>
                     </div>
-                    
+
                     <!-- Tipo Sanguíneo -->
                     <div class="mb-6">
                         <label class="block text-gray-700 font-medium mb-2">Tipo Sanguíneo</label>
@@ -136,75 +146,98 @@
                         </div>
                         <input type="hidden" id="bloodType" name="bloodType" required>
                     </div>
-                    
+
                     <!-- Telefone -->
                     <div class="mb-6">
                         <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
-                        <input type="text" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" required>
+                        <input type="text" id="phone" name="phone"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="(00) 00000-0000" data-mask="(00) 00000-0000" required>
                     </div>
-                    
+
                     <!-- CEP -->
                     <div class="mb-6">
                         <label for="cep" class="block text-gray-700 font-medium mb-2">CEP</label>
                         <div class="flex">
-                            <input type="text" id="cep" name="cep" class="w-full px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="00000-000" data-mask="00000-000" required>
-                            <button type="button" id="searchCep" class="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-r-lg font-medium transition duration-300">
+                            <input type="text" id="cep" name="cep"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="00000-000" data-mask="00000-000" required>
+                            <button type="button" id="searchCep"
+                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-r-lg font-medium transition duration-300">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </div>
-                    
+
                     <!-- Endereço (auto preenchido pelo CEP) -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                         <div class="md:col-span-2">
                             <label for="street" class="block text-gray-700 font-medium mb-2">Rua</label>
-                            <input type="text" id="street" name="street" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Nome da rua" readonly>
+                            <input type="text" id="street" name="street"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Nome da rua" readonly>
                         </div>
                         <div>
                             <label for="number" class="block text-gray-700 font-medium mb-2">Número</label>
-                            <input type="text" id="number" name="number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Nº">
+                            <input type="text" id="number" name="number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Nº">
                         </div>
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                         <div>
                             <label for="complement" class="block text-gray-700 font-medium mb-2">Complemento</label>
-                            <input type="text" id="complement" name="complement" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Apto, bloco, etc.">
+                            <input type="text" id="complement" name="complement"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Apto, bloco, etc.">
                         </div>
                         <div>
                             <label for="neighborhood" class="block text-gray-700 font-medium mb-2">Bairro</label>
-                            <input type="text" id="neighborhood" name="neighborhood" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Bairro" readonly>
+                            <input type="text" id="neighborhood" name="neighborhood"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Bairro" readonly>
                         </div>
                         <div>
                             <label for="city" class="block text-gray-700 font-medium mb-2">Cidade</label>
-                            <input type="text" id="city" name="city" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Cidade" readonly>
+                            <input type="text" id="city" name="city"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                placeholder="Cidade" readonly>
                         </div>
                     </div>
-                    
+
                     <div class="mb-6">
                         <label for="state" class="block text-gray-700 font-medium mb-2">Estado</label>
-                        <input type="text" id="state" name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Estado" readonly>
+                        <input type="text" id="state" name="state"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="Estado" readonly>
                     </div>
-                    
+
                     <!-- Termos e Condições -->
                     <div class="mb-8">
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
-                                <input id="terms" name="terms" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
+                                <input id="terms" name="terms" type="checkbox"
+                                    class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded" required>
                             </div>
                             <div class="ml-3 text-sm">
-                                <label for="terms" class="font-medium text-gray-700">Eu concordo com os <a href="#" class="text-red-600 hover:text-red-800">Termos de Uso</a> e <a href="#" class="text-red-600 hover:text-red-800">Política de Privacidade</a></label>
-                                <p class="text-gray-500">Ao criar sua conta, você concorda com nossos termos e condições.</p>
+                                <label for="terms" class="font-medium text-gray-700">Eu concordo com os <a href="#"
+                                        class="text-red-600 hover:text-red-800">Termos de Uso</a> e <a href="#"
+                                        class="text-red-600 hover:text-red-800">Política de Privacidade</a></label>
+                                <p class="text-gray-500">Ao criar sua conta, você concorda com nossos termos e
+                                    condições.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Botões -->
                     <div class="flex justify-end space-x-4">
-                        <a href="index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
+                        <a href="../donor/doadores-disponiveis.html"
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
                             Cancelar
                         </a>
-                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
                             <i class="fas fa-save mr-2"></i> Salvar Cadastro
                         </button>
                     </div>
@@ -239,7 +272,7 @@
     <script>
         // Seleção de tipo sanguíneo
         document.querySelectorAll('.blood-type-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 document.querySelectorAll('.blood-type-option').forEach(opt => {
                     opt.classList.remove('selected');
                 });
@@ -247,23 +280,23 @@
                 document.getElementById('bloodType').value = this.getAttribute('data-type');
             });
         });
-        
+
         // Máscaras para os campos
         function applyMask(element, pattern) {
-            element.addEventListener('input', function(e) {
+            element.addEventListener('input', function (e) {
                 let value = this.value.replace(/\D/g, '');
                 let patternChars = pattern.replace(/\D/g, '');
-                
+
                 if (value.length > patternChars.length) {
                     value = value.substring(0, patternChars.length);
                 }
-                
+
                 let formattedValue = '';
                 let valueIndex = 0;
-                
+
                 for (let i = 0; i < pattern.length; i++) {
                     if (valueIndex >= value.length) break;
-                    
+
                     if (pattern[i] === '0') {
                         formattedValue += value[valueIndex];
                         valueIndex++;
@@ -271,33 +304,33 @@
                         formattedValue += pattern[i];
                     }
                 }
-                
+
                 this.value = formattedValue;
             });
         }
-        
+
         // Aplicar máscaras
         document.querySelectorAll('[data-mask]').forEach(element => {
             const mask = element.getAttribute('data-mask');
             applyMask(element, mask);
         });
-        
+
         // Simulação de busca de CEP
-        document.getElementById('searchCep').addEventListener('click', function() {
+        document.getElementById('searchCep').addEventListener('click', function () {
             const cep = document.getElementById('cep').value.replace(/\D/g, '');
-            
+
             if (cep.length !== 8) {
                 alert('CEP inválido. Digite os 8 dígitos.');
                 return;
             }
-            
+
             // Simulação de API de CEP
             setTimeout(() => {
                 document.getElementById('street').value = 'Rua das Flores';
                 document.getElementById('neighborhood').value = 'Jardim Primavera';
                 document.getElementById('city').value = 'São Paulo';
                 document.getElementById('state').value = 'SP';
-                
+
                 // Remover readonly para permitir edição se necessário
                 document.getElementById('street').readOnly = false;
                 document.getElementById('neighborhood').readOnly = false;
@@ -305,21 +338,21 @@
                 document.getElementById('state').readOnly = false;
             }, 800);
         });
-        
+
         // Validação do formulário
-        document.getElementById('donorForm').addEventListener('submit', function(e) {
+        document.getElementById('donorForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (!document.getElementById('bloodType').value) {
                 alert('Por favor, selecione seu tipo sanguíneo');
                 return;
             }
-            
+
             if (!document.getElementById('terms').checked) {
                 alert('Você precisa aceitar os termos e condições');
                 return;
             }
-            
+
             // Verificar idade mínima (18 anos)
             const birthDate = document.getElementById('birthDate').value;
             if (birthDate) {
@@ -328,24 +361,24 @@
                 const today = new Date();
                 let age = today.getFullYear() - birthDay.getFullYear();
                 const monthDiff = today.getMonth() - birthDay.getMonth();
-                
+
                 if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDay.getDate())) {
                     age--;
                 }
-                
+
                 if (age < 18) {
                     alert('Você precisa ter pelo menos 18 anos para se cadastrar como doador');
                     return;
                 }
             }
-            
+
             // Simulação de cadastro
             alert('Cadastro atualizado com sucesso!');
             window.location.href = 'profile.html';
         });
-        
+
         // Preencher formulário com dados existentes (simulação)
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             // Simulando dados existentes do usuário
             const userData = {
                 firstName: 'Fulano',
@@ -363,19 +396,25 @@
                 city: 'São Paulo',
                 state: 'SP'
             };
-            
+
             // Preencher campos
             for (const key in userData) {
                 const element = document.getElementById(key);
                 if (element) {
                     element.value = userData[key];
-                    
+
                     // Selecionar tipo sanguíneo se existir
                     if (key === 'bloodType') {
                         document.querySelector(`.blood-type-option[data-type="${userData[key]}"]`).click();
                     }
                 }
             }
+        });
+
+        // Notification bell click
+        const notificationBell = document.querySelector('.fa-bell');
+        notificationBell.addEventListener('click', function () {
+            alert('Mostrar notificações');
         });
     </script>
 </body>

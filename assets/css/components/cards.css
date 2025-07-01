@@ -1,0 +1,219 @@
+/* Card Component Styles */
+.donor-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    border-left: 4px solid var(--primary-color);
+}
+
+.donor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.donor-card-content {
+    padding: var(--spacing-lg);
+}
+
+.donor-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.donor-info {
+    display: flex;
+    align-items: center;
+}
+
+.donor-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #fef2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+}
+
+.donor-avatar-icon {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+}
+
+.donor-details h3 {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.donor-details p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.blood-type-badge {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 0 0 2px white;
+}
+
+.donor-location {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.location-icon {
+    color: var(--primary-color);
+    margin-right: var(--spacing-sm);
+}
+
+.donor-card-footer {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.urgency-tags {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.urgency-tag {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.urgency-maximum {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.urgency-high {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.urgency-medium {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.urgency-low {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.urgency-unavailable {
+    background-color: var(--bg-gray);
+    color: var(--text-secondary);
+}
+
+.contact-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: background-color var(--transition-normal);
+}
+
+.contact-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.contact-btn:disabled {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* Stats Cards */
+.stats-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-normal);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.stats-card-title {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.stats-card-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: var(--spacing-sm) 0;
+}
+
+.stats-card-change {
+    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+}
+
+.stats-card-change.positive {
+    color: var(--success-color);
+}
+
+.stats-card-change.negative {
+    color: var(--danger-color);
+}
+
+.stats-card-icon {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-xl);
+}
+
+.stats-card-icon.primary {
+    background-color: #fef2f2;
+    color: var(--primary-color);
+}
+
+.stats-card-icon.blue {
+    background-color: #eff6ff;
+    color: var(--info-color);
+}
+
+.stats-card-icon.green {
+    background-color: #f0fdf4;
+    color: var(--success-color);
+}
+
+.stats-card-icon.yellow {
+    background-color: #fffbeb;
+    color: var(--warning-color);
+} 

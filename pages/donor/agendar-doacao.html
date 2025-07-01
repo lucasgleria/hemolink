@@ -13,7 +13,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-        
+
         .blood-type-option {
             display: flex;
             align-items: center;
@@ -25,24 +25,24 @@
             font-weight: bold;
             border: 2px solid transparent;
         }
-        
+
         .blood-type-option.selected {
             border-color: #dc2626;
             transform: scale(1.05);
             box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
         }
-        
+
         @media (max-width: 640px) {
             .blood-type-selector {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         /* Mask for inputs */
         input[data-mask="date"] {
             position: relative;
         }
-        
+
         input[data-mask="date"]:valid:after {
             position: absolute;
             content: "✓";
@@ -62,14 +62,14 @@
                 <h1 class="text-2xl font-bold text-red-600">Hemolink</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-red-600">
+                <a href="../donor/doadores-disponiveis.html" class="text-gray-600 hover:text-red-600">
                     <i class="fas fa-arrow-left mr-1"></i> Voltar
                 </a>
                 <div class="relative">
                     <i class="fas fa-bell text-gray-600 text-xl cursor-pointer"></i>
                     <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
                 </div>
-                <a href="profile.html">
+                <a href="../auth/login.html">
                     <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
                         <i class="fas fa-user text-gray-600"></i>
                     </div>
@@ -87,14 +87,16 @@
                     </div>
                     <h2 class="text-2xl font-bold text-gray-800">Agendar Doação!</h2>
                 </div>
-                
+
                 <p class="text-gray-600 mb-8">Preencha os dados para agendar sua doação de sangue e salvar vidas.</p>
-                
+
                 <form id="donationForm">
                     <!-- Local de Doação -->
                     <div class="mb-6">
                         <label for="center" class="block text-gray-700 font-medium mb-2">Hemocentro</label>
-                        <select id="center" name="center" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" required>
+                        <select id="center" name="center"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            required>
                             <option value="" disabled selected>Selecione um local</option>
                             <option value="hemocentro-sp">Hemocentro São Paulo</option>
                             <option value="hemorio">Hemorio - Rio de Janeiro</option>
@@ -108,11 +110,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label for="date" class="block text-gray-700 font-medium mb-2">Data</label>
-                            <input type="date" id="date" name="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" min="" required>
+                            <input type="date" id="date" name="date"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                min="" required>
                         </div>
                         <div>
                             <label for="time" class="block text-gray-700 font-medium mb-2">Horário</label>
-                            <select id="time" name="time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" required>
+                            <select id="time" name="time"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                                required>
                                 <option value="" disabled selected>Selecione um horário</option>
                                 <option value="08:00">08:00</option>
                                 <option value="09:00">09:00</option>
@@ -130,16 +136,22 @@
                     <div class="mb-6">
                         <label class="block text-gray-700 font-medium mb-2">Tipo de Doação</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <label class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
-                                <input type="radio" name="donationType" value="whole" class="focus:ring-red-500 h-4 w-4 text-red-600" checked>
+                            <label
+                                class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
+                                <input type="radio" name="donationType" value="whole"
+                                    class="focus:ring-red-500 h-4 w-4 text-red-600" checked>
                                 <span class="ml-2 text-gray-700">Sangue Total</span>
                             </label>
-                            <label class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
-                                <input type="radio" name="donationType" value="plasma" class="focus:ring-red-500 h-4 w-4 text-red-600">
+                            <label
+                                class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
+                                <input type="radio" name="donationType" value="plasma"
+                                    class="focus:ring-red-500 h-4 w-4 text-red-600">
                                 <span class="ml-2 text-gray-700">Plasma</span>
                             </label>
-                            <label class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
-                                <input type="radio" name="donationType" value="platelets" class="focus:ring-red-500 h-4 w-4 text-red-600">
+                            <label
+                                class="flex items-center border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-red-500">
+                                <input type="radio" name="donationType" value="platelets"
+                                    class="focus:ring-red-500 h-4 w-4 text-red-600">
                                 <span class="ml-2 text-gray-700">Plaquetas</span>
                             </label>
                         </div>
@@ -151,26 +163,32 @@
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="question1" name="question1" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
+                                    <input id="question1" name="question1" type="checkbox"
+                                        class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="question1" class="font-medium text-gray-700">Estou bem de saúde hoje</label>
+                                    <label for="question1" class="font-medium text-gray-700">Estou bem de saúde
+                                        hoje</label>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="question2" name="question2" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
+                                    <input id="question2" name="question2" type="checkbox"
+                                        class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="question2" class="font-medium text-gray-700">Estou hidratado e bem alimentado</label>
+                                    <label for="question2" class="font-medium text-gray-700">Estou hidratado e bem
+                                        alimentado</label>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input id="question3" name="question3" type="checkbox" class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
+                                    <input id="question3" name="question3" type="checkbox"
+                                        class="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded">
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="question3" class="font-medium text-gray-700">Não fiz tatuagem nos últimos 6 meses (se relevante)</label>
+                                    <label for="question3" class="font-medium text-gray-700">Não fiz tatuagem nos
+                                        últimos 6 meses (se relevante)</label>
                                 </div>
                             </div>
                         </div>
@@ -178,10 +196,12 @@
 
                     <!-- Botões -->
                     <div class="flex justify-end space-x-4">
-                        <a href="index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
+                        <a href="../donor/doadores-disponiveis.html"
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
                             Cancelar
                         </a>
-                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
                             <i class="fas fa-calendar-check mr-2"></i> Confirmar Agendamento
                         </button>
                     </div>
@@ -216,7 +236,7 @@
     <script>
         // Seleção de tipo sanguíneo
         document.querySelectorAll('.blood-type-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 document.querySelectorAll('.blood-type-option').forEach(opt => {
                     opt.classList.remove('selected');
                 });
@@ -224,23 +244,23 @@
                 document.getElementById('bloodType').value = this.getAttribute('data-type');
             });
         });
-        
+
         // Máscaras para os campos
         function applyMask(element, pattern) {
-            element.addEventListener('input', function(e) {
+            element.addEventListener('input', function (e) {
                 let value = this.value.replace(/\D/g, '');
                 let patternChars = pattern.replace(/\D/g, '');
-                
+
                 if (value.length > patternChars.length) {
                     value = value.substring(0, patternChars.length);
                 }
-                
+
                 let formattedValue = '';
                 let valueIndex = 0;
-                
+
                 for (let i = 0; i < pattern.length; i++) {
                     if (valueIndex >= value.length) break;
-                    
+
                     if (pattern[i] === '0') {
                         formattedValue += value[valueIndex];
                         valueIndex++;
@@ -248,33 +268,33 @@
                         formattedValue += pattern[i];
                     }
                 }
-                
+
                 this.value = formattedValue;
             });
         }
-        
+
         // Aplicar máscaras
         document.querySelectorAll('[data-mask]').forEach(element => {
             const mask = element.getAttribute('data-mask');
             applyMask(element, mask);
         });
-        
+
         // Simulação de busca de CEP
-        document.getElementById('searchCep').addEventListener('click', function() {
+        document.getElementById('searchCep').addEventListener('click', function () {
             const cep = document.getElementById('cep').value.replace(/\D/g, '');
-            
+
             if (cep.length !== 8) {
                 alert('CEP inválido. Digite os 8 dígitos.');
                 return;
             }
-            
+
             // Simulação de API de CEP
             setTimeout(() => {
                 document.getElementById('street').value = 'Rua das Flores';
                 document.getElementById('neighborhood').value = 'Jardim Primavera';
                 document.getElementById('city').value = 'São Paulo';
                 document.getElementById('state').value = 'SP';
-                
+
                 // Remover readonly para permitir edição se necessário
                 document.getElementById('street').readOnly = false;
                 document.getElementById('neighborhood').readOnly = false;
@@ -282,21 +302,21 @@
                 document.getElementById('state').readOnly = false;
             }, 800);
         });
-        
+
         // Validação do formulário
-        document.getElementById('donorForm').addEventListener('submit', function(e) {
+        document.getElementById('donorForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (!document.getElementById('bloodType').value) {
                 alert('Por favor, selecione seu tipo sanguíneo');
                 return;
             }
-            
+
             if (!document.getElementById('terms').checked) {
                 alert('Você precisa aceitar os termos e condições');
                 return;
             }
-            
+
             // Verificar idade mínima (18 anos)
             const birthDate = document.getElementById('birthDate').value;
             if (birthDate) {
@@ -305,24 +325,24 @@
                 const today = new Date();
                 let age = today.getFullYear() - birthDay.getFullYear();
                 const monthDiff = today.getMonth() - birthDay.getMonth();
-                
+
                 if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDay.getDate())) {
                     age--;
                 }
-                
+
                 if (age < 18) {
                     alert('Você precisa ter pelo menos 18 anos para se cadastrar como doador');
                     return;
                 }
             }
-            
+
             // Simulação de cadastro
             alert('Cadastro atualizado com sucesso!');
             window.location.href = 'profile.html';
         });
-        
+
         // Preencher formulário com dados existentes (simulação)
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             // Simulando dados existentes do usuário
             const userData = {
                 firstName: 'João',
@@ -340,13 +360,13 @@
                 city: 'São Paulo',
                 state: 'SP'
             };
-            
+
             // Preencher campos
             for (const key in userData) {
                 const element = document.getElementById(key);
                 if (element) {
                     element.value = userData[key];
-                    
+
                     // Selecionar tipo sanguíneo se existir
                     if (key === 'bloodType') {
                         document.querySelector(`.blood-type-option[data-type="${userData[key]}"]`).click();

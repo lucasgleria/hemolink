@@ -7,8 +7,8 @@
     <title>Hemolink - Doadores de Sangue</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <linl rel="stylesheet" href="style_index.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" type="module"></script>
 </head>
 
 <body class="bg-gray-50">
@@ -22,14 +22,15 @@
             </div>
             <div class="flex items-center space-x-4">
                 <button
-                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300"
+                    onclick="window.location.href='../donor/editar-cadastro.html'">
                     <i class="fas fa-plus mr-2"></i>Novo Doador
                 </button>
                 <div class="relative">
                     <i class="fas fa-bell text-gray-600 text-xl cursor-pointer"></i>
                     <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
                 </div>
-                <a href="login.html">
+                <a href="../auth/login.html">
                     <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
                         <i class="fas fa-user text-gray-600"></i>
                     </div>
@@ -55,7 +56,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            
+
             <!-- Donor Card 1 -->
             <div
                 class="donor-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 border-l-4 border-red-600">
@@ -258,6 +259,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Notification bell click
+        const notificationBell = document.querySelector('.fa-bell');
+        notificationBell.addEventListener('click', function () {
+            alert('Mostrar notificações');
+        });
+    </script>
 </body>
 
 </html>

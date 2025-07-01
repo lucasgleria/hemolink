@@ -13,7 +13,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-        
+
         .blood-type-option {
             display: flex;
             align-items: center;
@@ -25,13 +25,13 @@
             font-weight: bold;
             border: 2px solid transparent;
         }
-        
+
         .blood-type-option.selected {
             border-color: #dc2626;
             transform: scale(1.05);
             box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1), 0 2px 4px -1px rgba(220, 38, 38, 0.06);
         }
-        
+
         @media (max-width: 640px) {
             .blood-type-selector {
                 grid-template-columns: repeat(2, 1fr);
@@ -50,14 +50,14 @@
                 <h1 class="text-2xl font-bold text-red-600">Hemolink</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-red-600">
+                <a href="../donor/doadores-disponiveis.html" class="text-gray-600 hover:text-red-600">
                     <i class="fas fa-arrow-left mr-1"></i> Voltar
                 </a>
                 <div class="relative">
                     <i class="fas fa-bell text-gray-600 text-xl cursor-pointer"></i>
                     <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-600"></span>
                 </div>
-                <a href="login.html">
+                <a href="../auth/login.html">
                     <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
                         <i class="fas fa-user text-gray-600"></i>
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                     <h2 class="text-2xl font-bold text-gray-800">Solicitar Doação de Sangue</h2>
                 </div>
-                
+
                 <form id="donationRequestForm">
                     <!-- Tipo Sanguíneo -->
                     <div class="mb-8">
@@ -92,12 +92,15 @@
                         </div>
                         <input type="hidden" id="bloodType" name="bloodType" required>
                     </div>
-                    
+
                     <!-- Hemocentro -->
                     <div class="mb-8">
-                        <label for="hemocenter" class="block text-gray-700 font-medium mb-3">Hemocentro de Destino</label>
+                        <label for="hemocenter" class="block text-gray-700 font-medium mb-3">Hemocentro de
+                            Destino</label>
                         <div class="relative">
-                            <select id="hemocenter" name="hemocenter" class="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent appearance-none" required>
+                            <select id="hemocenter" name="hemocenter"
+                                class="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent appearance-none"
+                                required>
                                 <option value="" disabled selected>Selecione um hemocentro</option>
                                 <option value="1">Hospital Santa Catarina - São Paulo, SP</option>
                                 <option value="2">Hospital Carlo Chagas - Guarulhos, SP</option>
@@ -105,61 +108,75 @@
                                 <option value="4">Santo André Hospitais - Santo André, SP</option>
                                 <option value="5">Hemocentro Municipal - São Bernardo do Campo, SP</option>
                             </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Urgência -->
                     <div class="mb-8">
                         <label class="block text-gray-700 font-medium mb-3">Nível de Urgência</label>
                         <div class="grid grid-cols-4 gap-4">
-                            <div class="urgency-option bg-red-100 border border-red-200 text-red-800 py-2 px-4 rounded-lg text-center cursor-pointer" data-level="4">
+                            <div class="urgency-option bg-red-100 border border-red-200 text-red-800 py-2 px-4 rounded-lg text-center cursor-pointer"
+                                data-level="4">
                                 <i class="fas fa-exclamation-triangle mb-1"></i>
                                 <p class="text-sm font-medium">Máxima</p>
                             </div>
-                            <div class="urgency-option bg-yellow-100 border border-yellow-200 text-yellow-800 py-2 px-4 rounded-lg text-center cursor-pointer" data-level="3">
+                            <div class="urgency-option bg-yellow-100 border border-yellow-200 text-yellow-800 py-2 px-4 rounded-lg text-center cursor-pointer"
+                                data-level="3">
                                 <i class="fas fa-exclamation-circle mb-1"></i>
                                 <p class="text-sm font-medium">Alta</p>
                             </div>
-                            <div class="urgency-option bg-green-100 border border-green-200 text-green-800 py-2 px-4 rounded-lg text-center cursor-pointer" data-level="2">
+                            <div class="urgency-option bg-green-100 border border-green-200 text-green-800 py-2 px-4 rounded-lg text-center cursor-pointer"
+                                data-level="2">
                                 <i class="fas fa-info-circle mb-1"></i>
                                 <p class="text-sm font-medium">Média</p>
                             </div>
-                            <div class="urgency-option bg-blue-100 border border-blue-200 text-blue-800 py-2 px-4 rounded-lg text-center cursor-pointer" data-level="1">
+                            <div class="urgency-option bg-blue-100 border border-blue-200 text-blue-800 py-2 px-4 rounded-lg text-center cursor-pointer"
+                                data-level="1">
                                 <i class="fas fa-info mb-1"></i>
                                 <p class="text-sm font-medium">Baixa</p>
                             </div>
                         </div>
                         <input type="hidden" id="urgencyLevel" name="urgencyLevel" required>
                     </div>
-                    
+
                     <!-- Descrição -->
                     <div class="mb-8">
                         <label for="description" class="block text-gray-700 font-medium mb-3">Descrição do Caso</label>
-                        <textarea id="description" name="description" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Descreva detalhes sobre o paciente, motivo da necessidade, quantidade necessária, etc." required></textarea>
+                        <textarea id="description" name="description" rows="5"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            placeholder="Descreva detalhes sobre o paciente, motivo da necessidade, quantidade necessária, etc."
+                            required></textarea>
                     </div>
-                    
+
                     <!-- Anexos -->
                     <div class="mb-8">
                         <label class="block text-gray-700 font-medium mb-3">Anexar Documentos (Opcional)</label>
                         <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                             <i class="fas fa-cloud-upload-alt text-gray-400 text-3xl mb-2"></i>
                             <p class="text-gray-500 mb-2">Arraste e solte arquivos aqui ou</p>
-                            <button type="button" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition duration-300">
+                            <button type="button"
+                                class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition duration-300"
+                                onclick="document.getElementById('fileInput').click()">
                                 <i class="fas fa-folder-open mr-2"></i>Selecionar Arquivos
                             </button>
+                            <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png"
+                                style="display: none;" onchange="handleFileSelect(this)">
                             <p class="text-xs text-gray-400 mt-2">Formatos aceitos: PDF, JPG, PNG (Máx. 5MB cada)</p>
                         </div>
                     </div>
-                    
+
                     <!-- Botões -->
                     <div class="flex justify-end space-x-4">
-                        <a href="index.html" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
+                        <a href="../donor/doadores-disponiveis.html"
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300">
                             Cancelar
                         </a>
-                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center">
                             <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitação
                         </button>
                     </div>
@@ -194,7 +211,7 @@
     <script>
         // Seleção de tipo sanguíneo
         document.querySelectorAll('.blood-type-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 document.querySelectorAll('.blood-type-option').forEach(opt => {
                     opt.classList.remove('selected');
                 });
@@ -202,51 +219,71 @@
                 document.getElementById('bloodType').value = this.getAttribute('data-type');
             });
         });
-        
+
         // Seleção de nível de urgência
         document.querySelectorAll('.urgency-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 document.querySelectorAll('.urgency-option').forEach(opt => {
                     opt.classList.remove('border-red-500', 'border-yellow-500', 'border-green-500', 'border-blue-500');
                     opt.classList.add('border-red-200', 'border-yellow-200', 'border-green-200', 'border-blue-200');
                 });
-                
+
                 const level = this.getAttribute('data-level');
                 this.classList.remove(`border-${level === '4' ? 'red' : level === '3' ? 'yellow' : level === '2' ? 'green' : 'blue'}-200`);
                 this.classList.add(`border-${level === '4' ? 'red' : level === '3' ? 'yellow' : level === '2' ? 'green' : 'blue'}-500`);
-                
+
                 document.getElementById('urgencyLevel').value = level;
             });
         });
-        
+
         // Validação do formulário
-        document.getElementById('donationRequestForm').addEventListener('submit', function(e) {
+        document.getElementById('donationRequestForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (!document.getElementById('bloodType').value) {
                 alert('Por favor, selecione um tipo sanguíneo');
                 return;
             }
-            
+
             if (!document.getElementById('hemocenter').value) {
                 alert('Por favor, selecione um hemocentro');
                 return;
             }
-            
+
             if (!document.getElementById('urgencyLevel').value) {
                 alert('Por favor, selecione um nível de urgência');
                 return;
             }
-            
+
             if (!document.getElementById('description').value.trim()) {
                 alert('Por favor, descreva o caso');
                 return;
             }
-            
+
             // Simulação de envio
             alert('Solicitação enviada com sucesso! Os doadores compatíveis serão notificados.');
-            window.location.href = 'index.html';
+            window.location.href = 'doadores-disponiveis.html';
         });
+
+        // Função para lidar com seleção de arquivos
+        function handleFileSelect(input) {
+            const files = input.files;
+            if (files.length > 0) {
+                let fileNames = [];
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    // Verificar tamanho (5MB = 5 * 1024 * 1024 bytes)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert(`Arquivo ${file.name} é muito grande. Tamanho máximo: 5MB`);
+                        continue;
+                    }
+                    fileNames.push(file.name);
+                }
+                if (fileNames.length > 0) {
+                    alert(`Arquivos selecionados: ${fileNames.join(', ')}`);
+                }
+            }
+        }
     </script>
 </body>
 

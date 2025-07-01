@@ -127,7 +127,8 @@
                     </div>
 
                     <button
-                        class="mt-6 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition flex items-center justify-center">
+                        class="mt-6 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition flex items-center justify-center"
+                        onclick="window.location.href='../donor/editar-cadastro.html'">
                         <i class="fas fa-edit mr-2"></i> Editar dados
                     </button>
                 </div>
@@ -165,7 +166,7 @@
                             </div>
                             <h3 class="text-lg font-bold text-gray-800 mb-2">Visualizar doadores</h3>
                             <p class="text-gray-600 text-sm mb-4">Encontre outros doadores compatíveis e disponíveis</p>
-                            <a href="index.html">
+                            <a href="../donor/doadores-disponiveis.html">
                                 <button
                                     class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition">
                                     Acessar <i class="fas fa-arrow-right ml-2"></i>
@@ -183,7 +184,8 @@
                             <p class="text-gray-600 text-sm mb-4">Solicite uma doação de sangue para você ou alguém
                                 próximo</p>
                             <button
-                                class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                                class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition"
+                                onclick="window.location.href='../donor/pedir-doacao.html'">
                                 Solicitar <i class="fas fa-plus ml-2"></i>
                             </button>
                         </div>
@@ -270,7 +272,7 @@
             // Profile icon click
             const profileIcon = document.querySelector('.flex.items-center.space-x-2.cursor-pointer');
             profileIcon.addEventListener('click', function () {
-                alert('Abrir menu do perfil');
+                window.location.href = '../dashboard/stats-user.html';
             });
 
             // Notification bell click
