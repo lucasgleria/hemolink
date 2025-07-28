@@ -217,7 +217,7 @@ Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](h
 ## 📞 Contato 
 
   - **Colaborador**: [Lucas Leria](https://github.com/lucasgleria)
-  - **LinkedIn**: [Seu Perfil do LinkedIn](https://www.linkedin.com/in/lucasleria/)
+  - **LinkedIn**: [lucasleria](https://www.linkedin.com/in/lucasleria/)
   - **Repositório Original**: [Aqui](https://github.com/eduhantonio/hemolink)
   - **Dono do Repositório original:** [Eduardo Antonio](https://github.com/eduhantonio)
 
