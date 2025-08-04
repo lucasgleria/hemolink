@@ -4,7 +4,7 @@
 **Plataforma intuitiva para gerenciamento de doações de sangue, focada em conectar doadores a quem precisa de forma eficiente. Este projeto é uma evolução de uma base existente, com novas funcionalidades e melhorias.**
 
 [](LICENSE)
-[](https://www.google.com/search?q=https://github.com/GuxtaPires/hemolink/releases/tag/v1.0.0)
+[](https://github.com/GuxtaPires/hemolink/releases/tag/v1.0.0)
 [](https://www.google.com/search?q=)
 [](https://www.google.com/search?q=)
 
